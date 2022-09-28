@@ -1,4 +1,3 @@
-import { getQueriesForElement } from '@testing-library/react';
 import css from './FriendListItem.module.css';
 
 const FriendListItem = ({ avatar, name, isOnline, id }) => {
