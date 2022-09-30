@@ -1,6 +1,7 @@
 import css from './Transactions.module.css';
+import PropTypes from 'prop-types';
 
-const Transactions = props => {
+const Transactions = ({ items }) => {
   return (
     <table className={css.transactionHistory}>
       <thead className={css.thead}>
@@ -12,7 +13,7 @@ const Transactions = props => {
       </thead>
 
       <tbody className={css.tbody}>
-        {props.items.map(item => {
+        {items.map(item => {
           return (
             <tr className={css.row} key={item.id}>
               <td className={css.column}>{item.type}</td>
@@ -27,3 +28,7 @@ const Transactions = props => {
 };
 
 export default Transactions;
+
+TransactionHistory.prototypeTypes = {
+  items: PropTypes.object,
+};

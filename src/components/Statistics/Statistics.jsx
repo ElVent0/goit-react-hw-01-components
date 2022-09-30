@@ -1,4 +1,5 @@
 import css from './Statistics.module.css';
+import PropTypes from 'prop-types';
 
 const getrandomColor = () => {
   const color = (Math.random().toString(16) + '000000')
@@ -10,7 +11,7 @@ const getrandomColor = () => {
 const Statistics = ({ title, stats }) => {
   return (
     <section className={css.statistics}>
-      <h2 className={css.title}>{title}</h2>
+      {title && <h2 className={css.title}>{title}</h2>}
       <ul className={css.statList}>
         {stats.map(item => {
           return (
@@ -30,3 +31,8 @@ const Statistics = ({ title, stats }) => {
 };
 
 export default Statistics;
+
+Statistics.propTypes = {
+  title: PropTypes.string,
+  stats: PropTypes.arrayOf(PropTypes.object.isRequired),
+};
