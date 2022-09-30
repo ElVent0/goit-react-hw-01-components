@@ -29,6 +29,6 @@ const Transactions = ({ items }) => {
 
 export default Transactions;
 
-TransactionHistory.prototypeTypes = {
+Transactions.prototypeTypes = {
   items: PropTypes.object,
 };
